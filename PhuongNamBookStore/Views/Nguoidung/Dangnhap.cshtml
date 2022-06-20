@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="~/Content/css/login.css">
+</head>
+<body>
+
+    <div class="center">
+        <h1 style="text-center">ĐĂNG NHẬP</h1>
+        <h4 style="color:red; text-align:center; font-style:italic"> @ViewBag.Thongbao </h4>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <form>
+                <div class="txt_field">
+                    <input type="text" required>
+                    @ViewData["Loi1"]
+                    <span> </span>
+                    <label>Tên đăng nhập...</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" required>
+                    @ViewData["Loi2"]
+                    <span></span>
+                    <label>Mật khẩu...</label>
+                </div>
+                <div class="pass">Quên mật khẩu?</div>
+                <input type="submit" value="Đăng Nhập">
+                <div class="signup_link">
+                    Không co tài khoản? <a href="#">Đăng Ký</a>
+                </div>
+            </form>
+        }
+    </div>
+</body>
+</html>
+

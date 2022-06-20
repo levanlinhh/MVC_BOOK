@@ -1,0 +1,41 @@
+﻿@using PhuongNamBookStore.Models;
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SẢN PHẨM MỚI </h2>
+
+<div class="row">
+    @foreach (var sach in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <a href="@Url.Action("Chitietsach", "BookStore", new { id = sach.Masach})">
+                    <img alt="@sach.Tensach" src="~/Content/images/@sach.Anhbia" width="200" />
+                    <div>
+                        <br />
+                        <h4 style="text-align:center">
+                            @sach.Tensach
+                        </h4>
+                        <p></p>
+                    </div>
+                </a>
+                <div class="ratings">
+                    <p class="pull-right">15 reviews</p>
+                    <p>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star">
+                        </span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
